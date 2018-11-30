@@ -10,6 +10,16 @@ songData.forEach((song, i) => {
 });
 
 class App extends Component {
+
+  constructor() {
+    super();
+    songData.forEach((song) => {
+      song.state = {
+        favorite: false,
+      };
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -17,7 +27,7 @@ class App extends Component {
           <h1 className="page-header--title">Radio Lovelace</h1>
         </header>
         <main className="main">
-          <RadioSet tracks={songData} />
+          <RadioSet tracks={songData}/>
         </main>
       </div>
     );

@@ -26,11 +26,12 @@ const calculatePlayTime = (tracks) => {
 }
 
 const Playlist = (props) => {
+  //console.log(props.favorite)
   const tracks = props.tracks;
   const trackCount = tracks.length;
   const playtime = calculatePlayTime(tracks);
   const trackElements = tracks.map((track, i) => {
-    // We use "spread syntax" here to pass in all the properties of 
+    // We use "spread syntax" here to pass in all the properties of
     // the variable 'track' as props. Go look it up!
     return (
       <Track
