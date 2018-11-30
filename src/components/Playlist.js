@@ -26,8 +26,9 @@ const calculatePlayTime = (tracks) => {
 }
 
 const Playlist = (props) => {
-  //console.log(props.favorite)
+  console.log(props)
   const tracks = props.tracks;
+  const checkedCallback = props.checkedCallback
   const trackCount = tracks.length;
   const playtime = calculatePlayTime(tracks);
   const trackElements = tracks.map((track, i) => {
@@ -36,6 +37,7 @@ const Playlist = (props) => {
     return (
       <Track
         key={i}
+        checkedCallback = {checkedCallback}
         {...track}
       />
     );

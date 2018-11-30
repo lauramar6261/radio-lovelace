@@ -16,10 +16,12 @@ const RadioSet = (props) => {
         <Playlist
           side="Morning"
           tracks={playlists.morningTracks}
+          checkedCallback = {props.checkedCallback}
         />
         <Playlist
           side="Evening"
           tracks={playlists.eveningTracks}
+          checkedCallback = {props.checkedCallback}
         />
       </section>
     </div>
