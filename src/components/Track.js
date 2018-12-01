@@ -5,19 +5,11 @@ import "./styles/Track.css";
 
 // Here we use destructuring to extract the props into separate variables
 // See https://wesbos.com/destructuring-objects/
-
-// <input type="checkbox" id="something" />
-//
-
-// $("#favorite").click( function(){
-//    if( $(this).is(':checked') ) alert("checked");
-// })
-
-
+//favorite before was undefined
 
 const Track = ({title, artist, playtime, albumart, state, checkedCallback}) => {
   const favorite = state.favorite
-  console.log(checkedCallback)
+  console.log(favorite)
   return (
     <li className="track">
       <img className="track--albumart" alt={`album art for ${title}`} src={albumart} />
@@ -25,7 +17,7 @@ const Track = ({title, artist, playtime, albumart, state, checkedCallback}) => {
       <input
         type="checkbox"
         className="track--favorite"
-        id = "favorite"
+        onChange={checkedCallback}
         checked={!favorite}
       />
       <p className="track--artist">{artist}</p>
